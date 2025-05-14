@@ -1,0 +1,6 @@
+@TaludiaCalendarBackend_HostAddress = http://localhost:5256
+
+GET {{TaludiaCalendarBackend_HostAddress}}/calendar/events
+Accept: application/json
+
+###

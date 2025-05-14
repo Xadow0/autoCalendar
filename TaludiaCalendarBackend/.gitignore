@@ -1,0 +1,11 @@
+# .NET
+bin/
+obj/
+appsettings.Development.json
+appsettings.json
+secrets.json
+.env
+credentials.json
+token.json
+Google.Apis.Auth.OAuth2.Responses.TokenResponse-user
+launchSettings.json
