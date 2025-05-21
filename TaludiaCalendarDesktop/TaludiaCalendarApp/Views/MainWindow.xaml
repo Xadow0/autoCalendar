@@ -1,0 +1,44 @@
+﻿<Window x:Class="TaludiaCalendarApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="clr-namespace:TaludiaCalendarApp.ViewModels"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TaludiaCalendar" Height="600" Width="900">
+
+    <DockPanel Margin="10">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0 0 0 10">
+            <DatePicker SelectedDate="{Binding SelectedDate}" Width="150" Margin="0 0 10 0"/>
+            <Button Content="Cargar semana" Command="{Binding LoadEventsCommand}" Width="120"/>
+        </StackPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView Grid.Column="0" ItemsSource="{Binding Events}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5" Background="#f0f4ff">
+                            <TextBlock FontWeight="Bold" Text="{Binding Title}" />
+                            <TextBlock Text="{Binding Start}" FontSize="10"/>
+                            <TextBlock Text="{Binding End}" FontSize="10"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackPanel Grid.Column="1" Margin="10 0 0 0">
+                <TextBlock FontWeight="Bold" Text="Obras" />
+                <ListBox ItemsSource="{Binding Obras}" Height="100"/>
+
+                <TextBlock FontWeight="Bold" Margin="0 10 0 0" Text="Trabajadores" />
+                <ListBox ItemsSource="{Binding Trabajadores}" Height="100"/>
+
+                <TextBlock FontWeight="Bold" Margin="0 10 0 0" Text="Vehículos" />
+                <ListBox ItemsSource="{Binding Vehiculos}" Height="100"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
