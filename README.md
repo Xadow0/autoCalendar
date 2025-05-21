@@ -1,3 +1,5 @@
 Calendar application to manage with an UI a enterprise Google Calendar.
- - React
+ - WPF
  - .NET
+
+Started with React but currently abandoned
