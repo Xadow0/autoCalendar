@@ -16,6 +16,7 @@ public static class CalendarController
             }
 
             var events = await calendarService.GetWeeklyEventsAsync(date);
+            Console.WriteLine($"Events for week starting {date:yyyy-MM-dd} retrieved successfully.");
             return Results.Ok(events);
         });
     }
